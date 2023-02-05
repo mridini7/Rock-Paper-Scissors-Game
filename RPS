@@ -1,0 +1,27 @@
+import random
+moves_list = ["r", "p", "s"]
+name = input("What's your name? ")
+print("Hello " + name + " welcome to the rock, paper, scissors game!")
+number_of_games = int(input("How many games would you like to play? "))
+count = 0
+player_won_count = 0
+while count < number_of_games:
+    player_choice = input("Enter r (rock), p (paper), or s (scissors) ")
+    computer_choice = random.choice(moves_list)
+    if player_choice == computer_choice:
+        print("It's a tie! ")
+    elif player_choice == "r" and computer_choice == "s":
+        print("Congrats " + name + " you won! :)")
+        player_won_count += 1
+    elif player_choice == "s" and computer_choice == "p":
+        print("Congrats " + name + " you won! :)")
+        player_won_count += 1
+    elif player_choice == "p" and computer_choice == "r":
+        print("Congrats " + name + " you won! :)")
+        player_won_count += 1
+    else:
+        print("Sorry you lost :(")
+    count += 1
+    print("The computer's choice was " + computer_choice)
+
+print("Thank you for playing! You won " + str(player_won_count) + " times out of " + str(number_of_games))
